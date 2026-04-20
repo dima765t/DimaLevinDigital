@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,11 +23,26 @@
       <a class="brand" href="./index.html">PurpleFlow Studio</a>
       <nav>
         <ul class="nav-list">
-          <li><a class="nav-link active" href="./index.html">Home</a></li>
-          <li><a class="nav-link" href="./about.html">About</a></li>
-          <li><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
+          <li>
+            <a class="nav-link active" href="./index.html" data-i18n="nav_home">Home</a>
+          </li>
+          <li><a class="nav-link" href="./about.html" data-i18n="nav_about">About</a></li>
+          <li>
+            <a class="nav-link" href="./portfolio.html" data-i18n="nav_portfolio">Portfolio</a>
+          </li>
         </ul>
       </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="contact_cta"
+          >Contact Us</a
+        >
+      </div>
     </header>
 
     <main>
@@ -35,44 +50,80 @@
         <div class="orb orb-one" aria-hidden="true"></div>
         <div class="orb orb-two" aria-hidden="true"></div>
         <div class="hero-content">
-          <p class="eyebrow reveal">Websites that move business forward</p>
+          <p class="eyebrow reveal" data-i18n="hero_eyebrow">Websites that move business forward</p>
           <h1 class="reveal">
-            Outstanding web experiences for growing small businesses.
+            <span data-i18n="hero_title">Outstanding web experiences for growing small businesses.</span>
           </h1>
-          <p class="hero-description reveal">
+          <p class="hero-description reveal" data-i18n="hero_desc">
             We create, manage, and evolve modern websites that are visually bold,
             fast, and conversion-focused.
           </p>
           <div class="hero-actions reveal">
-            <a class="btn btn-primary" href="./portfolio.html">See Portfolio</a>
-            <a class="btn btn-secondary" href="./about.html">How We Work</a>
+            <a class="btn btn-primary" href="./portfolio.html" data-i18n="hero_btn_1">See Portfolio</a>
+            <a class="btn btn-secondary" href="./about.html" data-i18n="hero_btn_2">How We Work</a>
           </div>
         </div>
       </section>
 
       <section class="section section-dark">
         <div class="content-wrap">
-          <h2 class="section-title reveal">What we deliver</h2>
+          <h2 class="section-title reveal" data-i18n="deliver_title">What we deliver</h2>
           <div class="feature-grid">
             <article class="feature-card reveal">
-              <h3>Creation</h3>
-              <p>
+              <h3 data-i18n="feature_1_title">Creation</h3>
+              <p data-i18n="feature_1_desc">
                 From strategy to launch, we craft digital storefronts tailored
                 to your goals and your audience.
               </p>
             </article>
             <article class="feature-card reveal">
-              <h3>Management</h3>
-              <p>
+              <h3 data-i18n="feature_2_title">Management</h3>
+              <p data-i18n="feature_2_desc">
                 We keep your site healthy, updated, and secure so you can focus
                 on your business operations.
               </p>
             </article>
             <article class="feature-card reveal">
-              <h3>Development</h3>
-              <p>
+              <h3 data-i18n="feature_3_title">Development</h3>
+              <p data-i18n="feature_3_desc">
                 Need growth? We continuously improve performance, UX, and SEO to
                 support measurable outcomes.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section story-section">
+        <div class="story-wrap">
+          <div class="story-display reveal">
+            <div class="device-frame">
+              <div class="device-screen">
+                <p class="screen-step-number">01</p>
+                <h3 class="screen-step-title" data-i18n="story_step_1_title">Discover & plan</h3>
+                <p class="screen-step-desc" data-i18n="story_step_1_desc">
+                  We map business goals and customer intent before design begins.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="story-steps">
+            <article class="story-step reveal is-active" data-step="1">
+              <h3 data-i18n="story_step_1_title">Discover & plan</h3>
+              <p data-i18n="story_step_1_desc">
+                We map business goals and customer intent before design begins.
+              </p>
+            </article>
+            <article class="story-step reveal" data-step="2">
+              <h3 data-i18n="story_step_2_title">Design with clarity</h3>
+              <p data-i18n="story_step_2_desc">
+                Your brand is translated into clean, premium visuals with a clear hierarchy.
+              </p>
+            </article>
+            <article class="story-step reveal" data-step="3">
+              <h3 data-i18n="story_step_3_title">Launch & optimize</h3>
+              <p data-i18n="story_step_3_desc">
+                We ship fast, measure behavior, and improve continuously for growth.
               </p>
             </article>
           </div>
@@ -82,8 +133,8 @@
       <section class="section">
         <div class="content-wrap split-layout">
           <div class="split-copy reveal">
-            <h2>Tech-style visuals with smooth motion</h2>
-            <p>
+            <h2 data-i18n="motion_title">Tech-style visuals with smooth motion</h2>
+            <p data-i18n="motion_desc">
               Inspired by modern product storytelling pages, this site uses
               scroll-triggered animations, layered depth, and a clean visual
               hierarchy.
@@ -92,15 +143,15 @@
           <div class="stats-card reveal">
             <div class="stat">
               <span class="stat-number">90%+</span>
-              <span class="stat-label">Clients from referrals</span>
+              <span class="stat-label" data-i18n="stat_1">Clients from referrals</span>
             </div>
             <div class="stat">
               <span class="stat-number">24/7</span>
-              <span class="stat-label">Monitoring options</span>
+              <span class="stat-label" data-i18n="stat_2">Monitoring options</span>
             </div>
             <div class="stat">
               <span class="stat-number">1:1</span>
-              <span class="stat-label">Personal collaboration</span>
+              <span class="stat-label" data-i18n="stat_3">Personal collaboration</span>
             </div>
           </div>
         </div>
@@ -108,7 +159,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 PurpleFlow Studio. Crafted for ambitious small businesses.</p>
+      <p data-i18n="footer_copy">© 2026 PurpleFlow Studio. Crafted for ambitious small businesses.</p>
     </footer>
 
     <script src="./index.js"></script>

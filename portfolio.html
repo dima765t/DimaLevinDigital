@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,19 +22,30 @@
       <a class="brand" href="./index.html">PurpleFlow Studio</a>
       <nav>
         <ul class="nav-list">
-          <li><a class="nav-link" href="./index.html">Home</a></li>
-          <li><a class="nav-link" href="./about.html">About</a></li>
-          <li><a class="nav-link active" href="./portfolio.html">Portfolio</a></li>
+          <li><a class="nav-link" href="./index.html" data-i18n="nav_home">Home</a></li>
+          <li><a class="nav-link" href="./about.html" data-i18n="nav_about">About</a></li>
+          <li><a class="nav-link active" href="./portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
         </ul>
       </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="contact_cta"
+          >Contact Us</a
+        >
+      </div>
     </header>
 
     <main>
       <section class="hero section">
         <div class="hero-content reveal">
-          <p class="eyebrow">Selected work</p>
-          <h1>Projects built to help local businesses grow online.</h1>
-          <p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Selected work</p>
+          <h1 data-i18n="hero_title">Projects built to help local businesses grow online.</h1>
+          <p data-i18n="hero_desc">
             Each project combines visual storytelling, performance engineering,
             and business-driven UX.
           </p>
@@ -44,33 +55,33 @@
       <section class="section">
         <div class="portfolio-grid">
           <article class="project-card reveal">
-            <div class="project-tag">Hospitality</div>
-            <h2>Moonlight Bistro</h2>
-            <p>
+            <div class="project-tag" data-i18n="p1_tag">Hospitality</div>
+            <h2 data-i18n="p1_title">Moonlight Bistro</h2>
+            <p data-i18n="p1_desc">
               A polished restaurant site with online reservations and seasonal
               menu updates.
             </p>
           </article>
           <article class="project-card reveal">
-            <div class="project-tag">Health & Wellness</div>
-            <h2>Flow Therapy Clinic</h2>
-            <p>
+            <div class="project-tag" data-i18n="p2_tag">Health & Wellness</div>
+            <h2 data-i18n="p2_title">Flow Therapy Clinic</h2>
+            <p data-i18n="p2_desc">
               Trust-centered brand presence with service booking and educational
               content architecture.
             </p>
           </article>
           <article class="project-card reveal">
-            <div class="project-tag">Professional Services</div>
-            <h2>Northline Accounting</h2>
-            <p>
+            <div class="project-tag" data-i18n="p3_tag">Professional Services</div>
+            <h2 data-i18n="p3_title">Northline Accounting</h2>
+            <p data-i18n="p3_desc">
               Modern service pages with lead-focused forms, optimized for
               clarity and conversion.
             </p>
           </article>
           <article class="project-card reveal">
-            <div class="project-tag">Retail</div>
-            <h2>Vela Home Decor</h2>
-            <p>
+            <div class="project-tag" data-i18n="p4_tag">Retail</div>
+            <h2 data-i18n="p4_title">Vela Home Decor</h2>
+            <p data-i18n="p4_desc">
               Elegant product storytelling page that supports rapid catalog
               updates and promotions.
             </p>
@@ -80,7 +91,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>Want your business featured here next? Let’s build it together.</p>
+      <p data-i18n="footer_copy">Want your business featured here next? Let’s build it together.</p>
     </footer>
 
     <script src="./portfolio.js"></script>

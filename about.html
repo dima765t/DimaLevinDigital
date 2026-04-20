@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,19 +22,30 @@
       <a class="brand" href="./index.html">PurpleFlow Studio</a>
       <nav>
         <ul class="nav-list">
-          <li><a class="nav-link" href="./index.html">Home</a></li>
-          <li><a class="nav-link active" href="./about.html">About</a></li>
-          <li><a class="nav-link" href="./portfolio.html">Portfolio</a></li>
+          <li><a class="nav-link" href="./index.html" data-i18n="nav_home">Home</a></li>
+          <li><a class="nav-link active" href="./about.html" data-i18n="nav_about">About</a></li>
+          <li><a class="nav-link" href="./portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
         </ul>
       </nav>
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="contact_cta"
+          >Contact Us</a
+        >
+      </div>
     </header>
 
     <main>
       <section class="hero section">
         <div class="hero-inner">
-          <p class="eyebrow reveal">About our studio</p>
-          <h1 class="reveal">Design precision. Business impact.</h1>
-          <p class="reveal">
+          <p class="eyebrow reveal" data-i18n="hero_eyebrow">About our studio</p>
+          <h1 class="reveal" data-i18n="hero_title">Design precision. Business impact.</h1>
+          <p class="reveal" data-i18n="hero_desc">
             PurpleFlow Studio focuses on one thing: helping small businesses win
             online with websites that look premium and perform reliably.
           </p>
@@ -44,22 +55,22 @@
       <section class="section">
         <div class="container timeline">
           <article class="panel reveal">
-            <h2>Our approach</h2>
-            <p>
+            <h2 data-i18n="panel_1_title">Our approach</h2>
+            <p data-i18n="panel_1_desc">
               We start by understanding your business model, then define a
               visual and technical architecture that supports growth.
             </p>
           </article>
           <article class="panel reveal">
-            <h2>Our process</h2>
-            <p>
+            <h2 data-i18n="panel_2_title">Our process</h2>
+            <p data-i18n="panel_2_desc">
               Discovery, wireframing, visual system, development, launch, and
               ongoing optimization. Each phase is clear and collaborative.
             </p>
           </article>
           <article class="panel reveal">
-            <h2>Our promise</h2>
-            <p>
+            <h2 data-i18n="panel_3_title">Our promise</h2>
+            <p data-i18n="panel_3_desc">
               Every website we ship is crafted for speed, clarity, and trust so
               visitors can become customers faster.
             </p>
@@ -69,7 +80,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>Ready to build your digital flagship? Let’s create it.</p>
+      <p data-i18n="footer_copy">Ready to build your digital flagship? Let’s create it.</p>
     </footer>
 
     <script src="./about.js"></script>
