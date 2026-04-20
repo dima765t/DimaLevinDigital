@@ -20,7 +20,18 @@
     <div class="scroll-progress" aria-hidden="true"></div>
     <header class="site-header glass">
       <a class="brand" href="./index.html">PurpleFlow Studio</a>
-      <nav>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="primary-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="primary-nav" class="site-nav">
         <ul class="nav-list">
           <li><a class="nav-link" href="./index.html" data-i18n="nav_home">Home</a></li>
           <li><a class="nav-link" href="./about.html" data-i18n="nav_about">About</a></li>

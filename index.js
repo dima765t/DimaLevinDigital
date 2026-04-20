@@ -2,6 +2,9 @@ const revealItems = document.querySelectorAll(".reveal");
 const progressBar = document.querySelector(".scroll-progress");
 const hero = document.querySelector(".hero");
 const langToggle = document.querySelector(".lang-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
+const siteHeader = document.querySelector(".site-header");
+const navLinks = document.querySelectorAll(".site-nav .nav-link");
 const storySteps = document.querySelectorAll(".story-step");
 const screenStepNumber = document.querySelector(".screen-step-number");
 const screenStepTitle = document.querySelector(".screen-step-title");
@@ -82,6 +85,38 @@ const observer = new IntersectionObserver(
 );
 
 revealItems.forEach((item) => observer.observe(item));
+
+const closeMenu = () => {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  siteHeader.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+};
+
+if (menuToggle && siteHeader) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("menu-open");
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 980) {
+    closeMenu();
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
 
 const applyLanguage = (lang) => {
   const selected = translations[lang] ? lang : "en";

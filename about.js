@@ -2,6 +2,9 @@ const reveals = document.querySelectorAll(".reveal");
 const bar = document.querySelector(".scroll-progress");
 const heroInner = document.querySelector(".hero-inner");
 const langToggle = document.querySelector(".lang-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
+const siteHeader = document.querySelector(".site-header");
+const navLinks = document.querySelectorAll(".site-nav .nav-link");
 
 const translations = {
   en: {
@@ -50,6 +53,38 @@ const revealObserver = new IntersectionObserver(
 );
 
 reveals.forEach((item) => revealObserver.observe(item));
+
+const closeMenu = () => {
+  if (!siteHeader || !menuToggle) {
+    return;
+  }
+
+  siteHeader.classList.remove("menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+};
+
+if (menuToggle && siteHeader) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("menu-open");
+    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 980) {
+    closeMenu();
+  }
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMenu();
+  }
+});
 
 const applyLanguage = (lang) => {
   const selected = translations[lang] ? lang : "en";
