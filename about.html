@@ -3,95 +3,231 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PurpleFlow Studio | About</title>
+    <meta name="theme-color" content="#0b0b10" />
+    <title>About — PurpleFlow Studio</title>
     <meta
       name="description"
-      content="Learn how PurpleFlow Studio creates and manages websites for small businesses."
+      content="PurpleFlow Studio designs, builds and maintains websites for small businesses that care about how they show up online."
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./about.css" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
-    <header class="site-header glass">
-      <a class="brand" href="./index.html">PurpleFlow Studio</a>
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="primary-nav" class="site-nav">
-        <ul class="nav-list">
-          <li><a class="nav-link" href="./index.html" data-i18n="nav_home">Home</a></li>
-          <li><a class="nav-link active" href="./about.html" data-i18n="nav_about">About</a></li>
-          <li><a class="nav-link" href="./portfolio.html" data-i18n="nav_portfolio">Portfolio</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
-        <a
-          class="btn btn-whatsapp"
-          href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
-          target="_blank"
-          rel="noopener noreferrer"
-          data-i18n="contact_cta"
-          >Contact Us</a
-        >
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">PurpleFlow<span class="brand-dot">.</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="site-nav">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="./index.html" data-i18n="nav_home">Home</a></li>
+            <li><a class="nav-link is-active" href="./about.html" data-i18n="nav_about">About</a></li>
+            <li><a class="nav-link" href="./portfolio.html" data-i18n="nav_portfolio">Work</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
+          <a
+            class="btn btn-contact"
+            href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="contact_cta">Start a project</span>
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero section">
-        <div class="hero-inner">
-          <p class="eyebrow reveal" data-i18n="hero_eyebrow">About our studio</p>
-          <h1 class="reveal" data-i18n="hero_title">Design precision. Business impact.</h1>
-          <p class="reveal" data-i18n="hero_desc">
-            PurpleFlow Studio focuses on one thing: helping small businesses win
-            online with websites that look premium and perform reliably.
+      <!-- EDITORIAL HERO -->
+      <section class="about-hero">
+        <div class="container">
+          <p class="eyebrow reveal" data-i18n="hero_eyebrow">About the studio</p>
+          <h1 class="about-title">
+            <span class="line reveal-line"><span data-i18n="hero_title_1">A small studio</span></span>
+            <span class="line reveal-line"><em data-i18n="hero_title_2">obsessed</em> <span data-i18n="hero_title_3">with</span></span>
+            <span class="line reveal-line"><span data-i18n="hero_title_4">the quiet details.</span></span>
+          </h1>
+          <p class="about-lede reveal" data-i18n="hero_desc">
+            PurpleFlow exists for one reason — to give small businesses
+            websites that look premium, perform reliably and convert visitors
+            into customers.
           </p>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container timeline">
-          <article class="panel reveal">
-            <h2 data-i18n="panel_1_title">Our approach</h2>
-            <p data-i18n="panel_1_desc">
-              We start by understanding your business model, then define a
-              visual and technical architecture that supports growth.
+      <!-- MANIFESTO -->
+      <section class="manifesto">
+        <div class="container manifesto-grid">
+          <aside class="manifesto-meta">
+            <p class="section-kicker" data-i18n="manifesto_kicker">Manifesto</p>
+          </aside>
+          <div class="manifesto-body">
+            <p class="reveal" data-i18n="manifesto_1">
+              We believe a website is a hard-working employee, not a billboard.
+              It should qualify leads, tell the story, reassure the skeptic and
+              get out of the way.
             </p>
-          </article>
-          <article class="panel reveal">
-            <h2 data-i18n="panel_2_title">Our process</h2>
-            <p data-i18n="panel_2_desc">
-              Discovery, wireframing, visual system, development, launch, and
-              ongoing optimization. Each phase is clear and collaborative.
+            <p class="reveal" data-i18n="manifesto_2">
+              We believe speed is design. Typography is design. Trust is design.
+              Every technical decision we make is a design decision.
             </p>
-          </article>
-          <article class="panel reveal">
-            <h2 data-i18n="panel_3_title">Our promise</h2>
-            <p data-i18n="panel_3_desc">
-              Every website we ship is crafted for speed, clarity, and trust so
-              visitors can become customers faster.
+            <p class="reveal" data-i18n="manifesto_3">
+              We believe a studio should be small enough to care and senior
+              enough to deliver. That's why you will always work directly with
+              the people building your site.
             </p>
-          </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPROACH (pillar cards) -->
+      <section class="pillars">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-kicker reveal" data-i18n="pillars_kicker">The approach</p>
+            <h2 class="section-title reveal" data-i18n="pillars_title">
+              Three principles that guide every decision, from kickoff to launch.
+            </h2>
+          </header>
+
+          <div class="pillar-grid">
+            <article class="pillar reveal">
+              <div class="pillar-num">01</div>
+              <h3 data-i18n="pillar_1_title">Clarity over cleverness</h3>
+              <p data-i18n="pillar_1_desc">
+                A confused visitor is a lost customer. We lead with what a
+                business does, for whom, and why it matters — then let the
+                craft carry the tone.
+              </p>
+            </article>
+            <article class="pillar reveal">
+              <div class="pillar-num">02</div>
+              <h3 data-i18n="pillar_2_title">Speed as a feature</h3>
+              <p data-i18n="pillar_2_desc">
+                Every site ships with Core Web Vitals in the green. Hand-written
+                code, aggressive image handling, no unnecessary JavaScript.
+              </p>
+            </article>
+            <article class="pillar reveal">
+              <div class="pillar-num">03</div>
+              <h3 data-i18n="pillar_3_title">Long after launch</h3>
+              <p data-i18n="pillar_3_desc">
+                Launch is day one. We monitor, iterate, and tune the site
+                monthly — because websites should age well, not go stale.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS TIMELINE -->
+      <section class="timeline">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-kicker reveal" data-i18n="timeline_kicker">Process</p>
+            <h2 class="section-title reveal" data-i18n="timeline_title">
+              Six phases. One conversation from start to finish.
+            </h2>
+          </header>
+
+          <ol class="timeline-list">
+            <li class="timeline-item reveal">
+              <span class="tl-dot"></span>
+              <div class="tl-idx">01</div>
+              <div class="tl-body">
+                <h3 data-i18n="phase_1_title">Discovery</h3>
+                <p data-i18n="phase_1_desc">A short, focused workshop to map business goals, customer archetypes and competitive landscape.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="tl-dot"></span>
+              <div class="tl-idx">02</div>
+              <div class="tl-body">
+                <h3 data-i18n="phase_2_title">Architecture</h3>
+                <p data-i18n="phase_2_desc">Sitemap, user flows and wireframes. We commit to structure before we commit to style.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="tl-dot"></span>
+              <div class="tl-idx">03</div>
+              <div class="tl-body">
+                <h3 data-i18n="phase_3_title">Visual system</h3>
+                <p data-i18n="phase_3_desc">Typography, color, spacing, motion — a system that scales across every page you'll ever add.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="tl-dot"></span>
+              <div class="tl-idx">04</div>
+              <div class="tl-body">
+                <h3 data-i18n="phase_4_title">Build</h3>
+                <p data-i18n="phase_4_desc">Hand-coded, accessible, fast. Reviewed on real devices, not just the designer's laptop.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="tl-dot"></span>
+              <div class="tl-idx">05</div>
+              <div class="tl-body">
+                <h3 data-i18n="phase_5_title">Launch</h3>
+                <p data-i18n="phase_5_desc">QA, analytics wiring, SEO foundations and a calm deployment. No surprise Monday morning.</p>
+              </div>
+            </li>
+            <li class="timeline-item reveal">
+              <span class="tl-dot"></span>
+              <div class="tl-idx">06</div>
+              <div class="tl-body">
+                <h3 data-i18n="phase_6_title">Evolve</h3>
+                <p data-i18n="phase_6_desc">Ongoing care, iteration and new sections as your business changes. Month after month.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CLOSING -->
+      <section class="about-cta">
+        <div class="container about-cta-inner">
+          <h2 class="cta-title reveal">
+            <span data-i18n="cta_line_1">Think we might</span>
+            <em data-i18n="cta_line_2">fit your project?</em>
+          </h2>
+          <a
+            class="btn btn-primary btn-large"
+            href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="cta_button"
+          >
+            Say hello on WhatsApp
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p data-i18n="footer_copy">Ready to build your digital flagship? Let’s create it.</p>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>PurpleFlow Studio</span>
+        </div>
+        <p data-i18n="footer_copy">© 2026 — Crafted for ambitious small businesses.</p>
+      </div>
     </footer>
 
     <script src="./about.js"></script>

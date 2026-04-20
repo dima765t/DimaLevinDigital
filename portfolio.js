@@ -1,140 +1,176 @@
-const revealTargets = document.querySelectorAll(".reveal");
-const scrollProgress = document.querySelector(".scroll-progress");
-const heroContent = document.querySelector(".hero-content");
-const langToggle = document.querySelector(".lang-toggle");
-const menuToggle = document.querySelector(".menu-toggle");
-const siteHeader = document.querySelector(".site-header");
-const navLinks = document.querySelectorAll(".site-nav .nav-link");
+/* =========================================================================
+   PurpleFlow Studio — Portfolio
+   ========================================================================= */
 
-const translations = {
-  en: {
-    nav_home: "Home",
-    nav_about: "About",
-    nav_portfolio: "Portfolio",
-    contact_cta: "Contact Us",
-    hero_eyebrow: "Selected work",
-    hero_title: "Projects built to help local businesses grow online.",
-    hero_desc: "Each project combines visual storytelling, performance engineering, and business-driven UX.",
-    p1_tag: "Hospitality",
-    p1_title: "Moonlight Bistro",
-    p1_desc: "A polished restaurant site with online reservations and seasonal menu updates.",
-    p2_tag: "Health & Wellness",
-    p2_title: "Flow Therapy Clinic",
-    p2_desc: "Trust-centered brand presence with service booking and educational content architecture.",
-    p3_tag: "Professional Services",
-    p3_title: "Northline Accounting",
-    p3_desc: "Modern service pages with lead-focused forms, optimized for clarity and conversion.",
-    p4_tag: "Retail",
-    p4_title: "Vela Home Decor",
-    p4_desc: "Elegant product storytelling page that supports rapid catalog updates and promotions.",
-    footer_copy: "Want your business featured here next? Let’s build it together."
-  },
-  he: {
-    nav_home: "דף הבית",
-    nav_about: "אודות",
-    nav_portfolio: "פורטפוליו",
-    contact_cta: "צור קשר",
-    hero_eyebrow: "עבודות נבחרות",
-    hero_title: "פרויקטים שנבנו כדי לעזור לעסקים מקומיים לצמוח אונליין.",
-    hero_desc: "כל פרויקט משלב סיפור ויזואלי, הנדסת ביצועים וחוויית משתמש עם מטרות עסקיות.",
-    p1_tag: "אירוח",
-    p1_title: "Moonlight Bistro",
-    p1_desc: "אתר מסעדה מלוטש עם הזמנות אונליין ועדכוני תפריט עונתיים.",
-    p2_tag: "בריאות ולייף-סטייל",
-    p2_title: "Flow Therapy Clinic",
-    p2_desc: "נוכחות מותגית מבוססת אמון עם הזמנת שירותים וארכיטקטורת תוכן חינוכית.",
-    p3_tag: "שירותים מקצועיים",
-    p3_title: "Northline Accounting",
-    p3_desc: "עמודי שירות מודרניים עם טפסים ממוקדי לידים, מותאמים לבהירות ולהמרה.",
-    p4_tag: "קמעונאות",
-    p4_title: "Vela Home Decor",
-    p4_desc: "עמוד סיפור מוצר אלגנטי שמאפשר עדכוני קטלוג ומבצעים במהירות.",
-    footer_copy: "רוצים שהעסק שלכם יופיע כאן הבא בתור? בואו נבנה את זה יחד."
-  }
-};
+(() => {
+  "use strict";
 
-const cardObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+  const $  = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-revealTargets.forEach((node) => cardObserver.observe(node));
+  const translations = {
+    en: {
+      nav_home: "Home",
+      nav_about: "About",
+      nav_portfolio: "Work",
+      contact_cta: "Start a project",
 
-const closeMenu = () => {
-  if (!siteHeader || !menuToggle) {
-    return;
-  }
+      hero_eyebrow: "Selected work",
+      hero_title_1: "Small businesses,",
+      hero_title_2: "serious",
+      hero_title_3: "websites.",
+      hero_desc: "Four recent projects across hospitality, wellness, professional services and retail.",
 
-  siteHeader.classList.remove("menu-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-};
+      meta_projects: "Projects",
+      meta_years: "Years",
+      meta_sectors: "Sectors",
 
-if (menuToggle && siteHeader) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = siteHeader.classList.toggle("menu-open");
-    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-}
+      p1_tag: "Hospitality",
+      p1_title: "Moonlight Bistro",
+      p1_desc: "A polished restaurant site with online reservations, a seasonal menu and reviews that load instantly on a 3G phone.",
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", closeMenu);
-});
+      p2_tag: "Health & wellness",
+      p2_title: "Flow Therapy Clinic",
+      p2_desc: "A trust-centered brand presence with online booking and a content architecture built around patient questions.",
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 980) {
-    closeMenu();
-  }
-});
+      p3_tag: "Professional services",
+      p3_title: "Northline Accounting",
+      p3_desc: "Modern service pages and lead-focused forms — rewritten for clarity and tuned for conversion from search traffic.",
 
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeMenu();
-  }
-});
+      p4_tag: "Retail",
+      p4_title: "Vela Home Decor",
+      p4_desc: "Elegant product storytelling with a catalog that the client can update themselves without breaking the aesthetic.",
 
-const applyLanguage = (lang) => {
-  const selected = translations[lang] ? lang : "en";
-  localStorage.setItem("siteLang", selected);
-  document.documentElement.lang = selected;
-  document.documentElement.dir = selected === "he" ? "rtl" : "ltr";
+      view_case: "View case study",
 
-  if (langToggle) {
-    langToggle.textContent = selected === "he" ? "EN" : "עב";
-  }
+      cta_line_1: "Your business,",
+      cta_line_2: "featured here next.",
+      cta_button: "Say hello on WhatsApp",
 
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.getAttribute("data-i18n");
-    const value = translations[selected][key];
-    if (value) {
-      element.textContent = value;
+      footer_copy: "© 2026 — Crafted for ambitious small businesses."
+    },
+    he: {
+      nav_home: "בית",
+      nav_about: "אודות",
+      nav_portfolio: "עבודות",
+      contact_cta: "להתחיל פרויקט",
+
+      hero_eyebrow: "עבודות נבחרות",
+      hero_title_1: "עסקים קטנים,",
+      hero_title_2: "אתרים",
+      hero_title_3: "רציניים.",
+      hero_desc: "ארבעה פרויקטים אחרונים בתחומי האירוח, הבריאות, השירותים המקצועיים והקמעונאות.",
+
+      meta_projects: "פרויקטים",
+      meta_years: "שנים",
+      meta_sectors: "ענפים",
+
+      p1_tag: "אירוח",
+      p1_title: "Moonlight Bistro",
+      p1_desc: "אתר מסעדה מוקפד עם הזמנות שולחן אונליין, תפריט עונתי וביקורות שנטענות מיידית גם ברשת 3G.",
+
+      p2_tag: "בריאות ורווחה",
+      p2_title: "Flow Therapy Clinic",
+      p2_desc: "נוכחות מותגית מבוססת אמון עם מערכת זימון אונליין וארכיטקטורת תוכן סביב השאלות של המטופלים.",
+
+      p3_tag: "שירותים מקצועיים",
+      p3_title: "Northline Accounting",
+      p3_desc: "עמודי שירות מודרניים וטפסים ממוקדי לידים — נכתבו מחדש לבהירות וכווננו להמרה מתנועת חיפוש.",
+
+      p4_tag: "קמעונאות",
+      p4_title: "Vela Home Decor",
+      p4_desc: "סיפור מוצר אלגנטי עם קטלוג שהלקוח יכול לעדכן בעצמו בלי לפגוע באסתטיקה.",
+
+      view_case: "לצפייה בתיק עבודה",
+
+      cta_line_1: "העסק שלכם,",
+      cta_line_2: "המוצג הבא כאן.",
+      cta_button: "לשלוח הודעה ב-WhatsApp",
+
+      footer_copy: "© 2026 — נבנה עבור עסקים קטנים עם שאיפות גדולות."
     }
-  });
-};
+  };
 
-const onScroll = () => {
-  const y = window.scrollY;
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  const width = max > 0 ? (y / max) * 100 : 0;
-  scrollProgress.style.width = `${width}%`;
+  /* Language */
+  const applyLanguage = (lang) => {
+    const selected = translations[lang] ? lang : "en";
+    try { localStorage.setItem("siteLang", selected); } catch (_) {}
+    document.documentElement.lang = selected;
+    document.documentElement.dir = selected === "he" ? "rtl" : "ltr";
 
-  if (heroContent) {
-    const depth = Math.min(y * 0.1, 70);
-    heroContent.style.transform = `translateY(${depth}px)`;
+    const toggle = $(".lang-toggle");
+    if (toggle) toggle.textContent = selected === "he" ? "EN" : "עב";
+
+    $$("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = translations[selected][key];
+      if (value) el.textContent = value;
+    });
+  };
+
+  /* Menu */
+  const header   = $(".site-header");
+  const menuBtn  = $(".menu-toggle");
+  const navLinks = $$(".site-nav .nav-link");
+
+  const closeMenu = () => {
+    if (!header) return;
+    header.classList.remove("menu-open");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+  };
+
+  if (menuBtn && header) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("menu-open");
+      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
   }
-};
+  navLinks.forEach((l) => l.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+  window.addEventListener("resize", () => { if (window.innerWidth > 900) closeMenu(); });
 
-window.addEventListener("scroll", onScroll, { passive: true });
-if (langToggle) {
-  langToggle.addEventListener("click", () => {
-    const current = localStorage.getItem("siteLang") || "en";
-    applyLanguage(current === "en" ? "he" : "en");
-  });
-}
-applyLanguage(localStorage.getItem("siteLang") || "en");
-onScroll();
+  /* Reveal */
+  const revealTargets = $$(".reveal, .reveal-line");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
+  );
+  revealTargets.forEach((t) => revealObserver.observe(t));
+
+  /* Scroll-driven UI */
+  const progressBar = $(".scroll-progress");
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y   = window.scrollY;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (y / max) * 100 : 0;
+      if (progressBar) progressBar.style.width = pct + "%";
+      if (header) header.classList.toggle("is-scrolled", y > 24);
+      ticking = false;
+    });
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  /* Lang toggle + init */
+  const langBtn = $(".lang-toggle");
+  if (langBtn) {
+    langBtn.addEventListener("click", () => {
+      const current = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "en";
+      applyLanguage(current === "en" ? "he" : "en");
+    });
+  }
+  const initialLang = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "en";
+  applyLanguage(initialLang);
+  onScroll();
+})();

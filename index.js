@@ -1,204 +1,290 @@
-const revealItems = document.querySelectorAll(".reveal");
-const progressBar = document.querySelector(".scroll-progress");
-const hero = document.querySelector(".hero");
-const langToggle = document.querySelector(".lang-toggle");
-const menuToggle = document.querySelector(".menu-toggle");
-const siteHeader = document.querySelector(".site-header");
-const navLinks = document.querySelectorAll(".site-nav .nav-link");
-const storySteps = document.querySelectorAll(".story-step");
-const screenStepNumber = document.querySelector(".screen-step-number");
-const screenStepTitle = document.querySelector(".screen-step-title");
-const screenStepDesc = document.querySelector(".screen-step-desc");
+/* =========================================================================
+   PurpleFlow Studio — Home
+   ========================================================================= */
 
-const translations = {
-  en: {
-    nav_home: "Home",
-    nav_about: "About",
-    nav_portfolio: "Portfolio",
-    contact_cta: "Contact Us",
-    hero_eyebrow: "Websites that move business forward",
-    hero_title: "Outstanding web experiences for growing small businesses.",
-    hero_desc: "We create, manage, and evolve modern websites that are visually bold, fast, and conversion-focused.",
-    hero_btn_1: "See Portfolio",
-    hero_btn_2: "How We Work",
-    deliver_title: "What we deliver",
-    feature_1_title: "Creation",
-    feature_1_desc: "From strategy to launch, we craft digital storefronts tailored to your goals and your audience.",
-    feature_2_title: "Management",
-    feature_2_desc: "We keep your site healthy, updated, and secure so you can focus on your business operations.",
-    feature_3_title: "Development",
-    feature_3_desc: "Need growth? We continuously improve performance, UX, and SEO to support measurable outcomes.",
-    story_step_1_title: "Discover & plan",
-    story_step_1_desc: "We map business goals and customer intent before design begins.",
-    story_step_2_title: "Design with clarity",
-    story_step_2_desc: "Your brand is translated into clean, premium visuals with a clear hierarchy.",
-    story_step_3_title: "Launch & optimize",
-    story_step_3_desc: "We ship fast, measure behavior, and improve continuously for growth.",
-    motion_title: "Tech-style visuals with smooth motion",
-    motion_desc: "Inspired by modern product storytelling pages, this site uses scroll-triggered animations, layered depth, and a clean visual hierarchy.",
-    stat_1: "Clients from referrals",
-    stat_2: "Monitoring options",
-    stat_3: "Personal collaboration",
-    footer_copy: "© 2026 PurpleFlow Studio. Crafted for ambitious small businesses."
-  },
-  he: {
-    nav_home: "דף הבית",
-    nav_about: "אודות",
-    nav_portfolio: "פורטפוליו",
-    contact_cta: "צור קשר",
-    hero_eyebrow: "אתרים שמקדמים את העסק",
-    hero_title: "חוויות ווב יוצאות דופן לעסקים קטנים בצמיחה.",
-    hero_desc: "אנחנו יוצרים, מנהלים ומשדרגים אתרים מודרניים בעיצוב מרשים, מהירים ובעלי מיקוד בהמרות.",
-    hero_btn_1: "לצפייה בפורטפוליו",
-    hero_btn_2: "איך אנחנו עובדים",
-    deliver_title: "מה אנחנו מספקים",
-    feature_1_title: "הקמה",
-    feature_1_desc: "משלב האסטרטגיה ועד העלייה לאוויר, אנחנו בונים נכס דיגיטלי שמותאם למטרות ולקהל שלך.",
-    feature_2_title: "ניהול",
-    feature_2_desc: "אנחנו שומרים על האתר מעודכן, מאובטח ויציב כדי שתוכל להתמקד בניהול העסק.",
-    feature_3_title: "פיתוח",
-    feature_3_desc: "צריך לגדול? אנחנו משפרים באופן רציף ביצועים, חוויית משתמש ו-SEO לתוצאות מדידות.",
-    story_step_1_title: "מחקר ותכנון",
-    story_step_1_desc: "ממפים יעדים עסקיים וכוונת לקוח לפני שמתחילים לעצב.",
-    story_step_2_title: "עיצוב ממוקד בהירות",
-    story_step_2_desc: "מתרגמים את המותג שלך לשפה ויזואלית נקייה, יוקרתית וברורה.",
-    story_step_3_title: "השקה ואופטימיזציה",
-    story_step_3_desc: "משיקים מהר, מנתחים התנהגות ומשפרים באופן קבוע לצמיחה.",
-    motion_title: "ויזואל טכנולוגי עם תנועה חלקה",
-    motion_desc: "בהשראת דפי מוצר מודרניים, האתר משלב אנימציות בגלילה, עומק שכבות והיררכיה חזותית נקייה.",
-    stat_1: "לקוחות מהמלצות",
-    stat_2: "אפשרויות ניטור",
-    stat_3: "ליווי אישי",
-    footer_copy: "© 2026 PurpleFlow Studio. נבנה עבור עסקים קטנים עם שאיפות גדולות."
-  }
-};
+(() => {
+  "use strict";
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+  const $  = (sel, ctx = document) => ctx.querySelector(sel);
+  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-revealItems.forEach((item) => observer.observe(item));
+  /* ---------------------------------------------------------------------
+     i18n dictionary
+     --------------------------------------------------------------------- */
+  const translations = {
+    en: {
+      nav_home: "Home",
+      nav_about: "About",
+      nav_portfolio: "Work",
+      contact_cta: "Start a project",
 
-const closeMenu = () => {
-  if (!siteHeader || !menuToggle) {
-    return;
-  }
+      hero_eyebrow_text: "Independent web studio — Tel Aviv",
+      hero_title_1: "Websites that",
+      hero_title_2: "quietly",
+      hero_title_3: "do",
+      hero_title_4: "the heavy lifting.",
+      hero_desc: "We design, build and maintain editorial websites for small businesses — considered, fast, and measurably better for revenue.",
+      hero_btn_1: "See the work",
+      hero_btn_2: "How we work",
 
-  siteHeader.classList.remove("menu-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-};
+      deliver_kicker: "What we deliver",
+      deliver_title: "Three services, tuned to the life cycle of a small business website.",
+      feature_1_title: "Creation",
+      feature_1_desc: "From positioning to launch — a digital storefront built around the exact customer you want to reach.",
+      feature_2_title: "Management",
+      feature_2_desc: "Hosting, updates, backups, monitoring. The quiet infrastructure that lets you stop thinking about your website.",
+      feature_3_title: "Development",
+      feature_3_desc: "Continuous improvements to speed, UX and SEO — always grounded in measurable outcomes.",
 
-if (menuToggle && siteHeader) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = siteHeader.classList.toggle("menu-open");
-    menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  });
-}
+      story_kicker: "Process",
+      story_step_1_title: "Discover & plan",
+      story_step_1_desc: "We map business goals and customer intent before a single pixel is drawn.",
+      story_step_2_title: "Design with clarity",
+      story_step_2_desc: "Your brand becomes a calm, confident visual system — with a hierarchy the user feels before they read.",
+      story_step_3_title: "Build & ship",
+      story_step_3_desc: "Hand-written, accessible code. Core Web Vitals in the green from day one.",
+      story_step_4_title: "Measure & evolve",
+      story_step_4_desc: "Launch is the start. Every month we review behavior data and make the site a little sharper.",
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", closeMenu);
-});
+      stat_1: "of new clients arrive through referrals.",
+      stat_2: "monitoring and uptime coverage.",
+      stat_3: "senior-led collaboration, no account layers.",
 
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 980) {
-    closeMenu();
-  }
-});
+      cta_line_1: "Let's build",
+      cta_line_2: "something quietly excellent.",
+      cta_button: "Start a conversation",
 
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeMenu();
-  }
-});
+      footer_copy: "© 2026 — Crafted for ambitious small businesses."
+    },
+    he: {
+      nav_home: "בית",
+      nav_about: "אודות",
+      nav_portfolio: "עבודות",
+      contact_cta: "להתחיל פרויקט",
 
-const applyLanguage = (lang) => {
-  const selected = translations[lang] ? lang : "en";
-  localStorage.setItem("siteLang", selected);
-  document.documentElement.lang = selected;
-  document.documentElement.dir = selected === "he" ? "rtl" : "ltr";
+      hero_eyebrow_text: "סטודיו עצמאי לאתרים — תל אביב",
+      hero_title_1: "אתרים",
+      hero_title_2: "שבשקט",
+      hero_title_3: "עושים",
+      hero_title_4: "את כל העבודה.",
+      hero_desc: "מעצבים, בונים ומתחזקים אתרים מוקפדים לעסקים קטנים — מעודנים, מהירים, ומדידים מבחינת הכנסות.",
+      hero_btn_1: "לצפייה בעבודות",
+      hero_btn_2: "איך עובדים",
 
-  if (langToggle) {
-    langToggle.textContent = selected === "he" ? "EN" : "עב";
-  }
+      deliver_kicker: "מה אנחנו מספקים",
+      deliver_title: "שלושה שירותים, מותאמים למחזור החיים של אתר עסק קטן.",
+      feature_1_title: "הקמה",
+      feature_1_desc: "מהמיצוב ועד להשקה — חלון ראווה דיגיטלי שנבנה סביב הלקוח המדויק שאליו אתם פונים.",
+      feature_2_title: "ניהול",
+      feature_2_desc: "אחסון, עדכונים, גיבויים, ניטור. התשתית השקטה שמאפשרת לכם להפסיק לחשוב על האתר.",
+      feature_3_title: "פיתוח",
+      feature_3_desc: "שיפור מתמשך של מהירות, חוויית משתמש ו-SEO — תמיד מעוגן בתוצאות מדידות.",
 
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.getAttribute("data-i18n");
-    const value = translations[selected][key];
-    if (value) {
-      element.textContent = value;
+      story_kicker: "תהליך",
+      story_step_1_title: "מחקר ותכנון",
+      story_step_1_desc: "ממפים את מטרות העסק ואת כוונת הלקוח עוד לפני שמציירים פיקסל אחד.",
+      story_step_2_title: "עיצוב ברור",
+      story_step_2_desc: "המותג שלכם הופך לשפה חזותית רגועה ובטוחה — עם היררכיה שמרגישים עוד לפני שקוראים.",
+      story_step_3_title: "בנייה והשקה",
+      story_step_3_desc: "קוד שנכתב ביד, נגיש ומהיר. Core Web Vitals בירוק מהיום הראשון.",
+      story_step_4_title: "מדידה ושיפור",
+      story_step_4_desc: "ההשקה היא רק ההתחלה. בכל חודש אנחנו בוחנים נתונים ומשפרים את האתר עוד קצת.",
+
+      stat_1: "מהלקוחות החדשים מגיעים מהמלצות.",
+      stat_2: "ניטור וזמינות ברציפות.",
+      stat_3: "ליווי אישי, בלי שכבות ניהול.",
+
+      cta_line_1: "בואו נבנה",
+      cta_line_2: "משהו מצוין בשקט.",
+      cta_button: "לפתוח בשיחה",
+
+      footer_copy: "© 2026 — נבנה עבור עסקים קטנים עם שאיפות גדולות."
     }
-  });
+  };
 
-  updateStoryDisplay();
-};
+  /* ---------------------------------------------------------------------
+     Language
+     --------------------------------------------------------------------- */
+  const applyLanguage = (lang) => {
+    const selected = translations[lang] ? lang : "en";
+    try { localStorage.setItem("siteLang", selected); } catch (_) {}
+    document.documentElement.lang = selected;
+    document.documentElement.dir = selected === "he" ? "rtl" : "ltr";
 
-const updateStoryDisplay = () => {
-  const activeStep = document.querySelector(".story-step.is-active");
-  if (!activeStep || !screenStepTitle || !screenStepDesc || !screenStepNumber) {
-    return;
+    const toggle = $(".lang-toggle");
+    if (toggle) toggle.textContent = selected === "he" ? "EN" : "עב";
+
+    $$("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      const value = translations[selected][key];
+      if (value) el.textContent = value;
+    });
+
+    $$("[data-i18n-text]").forEach((el) => {
+      const parent = el.closest("[data-i18n-parent], .eyebrow");
+      if (!parent) return;
+      const key = "hero_eyebrow_text";
+      const value = translations[selected][key];
+      if (value) el.textContent = value;
+    });
+
+    // Refresh story stage (in case Hebrew was just loaded)
+    updateStoryDisplay(getActiveStep());
+  };
+
+  /* ---------------------------------------------------------------------
+     Mobile menu
+     --------------------------------------------------------------------- */
+  const header    = $(".site-header");
+  const menuBtn   = $(".menu-toggle");
+  const navLinks  = $$(".site-nav .nav-link");
+
+  const closeMenu = () => {
+    if (!header) return;
+    header.classList.remove("menu-open");
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+  };
+
+  if (menuBtn && header) {
+    menuBtn.addEventListener("click", () => {
+      const isOpen = header.classList.toggle("menu-open");
+      menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
   }
+  navLinks.forEach((l) => l.addEventListener("click", closeMenu));
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+  window.addEventListener("resize", () => { if (window.innerWidth > 900) closeMenu(); });
 
-  const stepIndex = Number(activeStep.getAttribute("data-step")) || 1;
-  const lang = localStorage.getItem("siteLang") || "en";
-  const titleKey = `story_step_${stepIndex}_title`;
-  const descKey = `story_step_${stepIndex}_desc`;
-  screenStepNumber.textContent = `0${stepIndex}`;
-  screenStepTitle.textContent = translations[lang][titleKey];
-  screenStepDesc.textContent = translations[lang][descKey];
-};
+  /* ---------------------------------------------------------------------
+     Reveal on scroll (IntersectionObserver)
+     --------------------------------------------------------------------- */
+  const revealTargets = $$(".reveal, .reveal-line");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: "0px 0px -5% 0px" }
+  );
+  revealTargets.forEach((t) => revealObserver.observe(t));
 
-const updateActiveStoryStep = () => {
-  if (!storySteps.length) {
-    return;
+  /* ---------------------------------------------------------------------
+     Story / process — clickable + scroll-synced stage
+     --------------------------------------------------------------------- */
+  const storySteps = $$(".story-step");
+  const storyCards = $$(".story-card");
+
+  const getActiveStep = () => {
+    const act = storySteps.find((s) => s.classList.contains("is-active"));
+    return act ? Number(act.dataset.step) || 1 : 1;
+  };
+
+  const setActiveStep = (index) => {
+    storySteps.forEach((s) => s.classList.toggle("is-active", Number(s.dataset.step) === index));
+    updateStoryDisplay(index);
+  };
+
+  function updateStoryDisplay(index) {
+    storyCards.forEach((c) => c.classList.toggle("is-active", Number(c.dataset.slide) === index));
   }
-
-  let closest = storySteps[0];
-  let minDistance = Number.POSITIVE_INFINITY;
 
   storySteps.forEach((step) => {
-    const rect = step.getBoundingClientRect();
-    const distance = Math.abs(rect.top - window.innerHeight * 0.35);
-    if (distance < minDistance) {
-      minDistance = distance;
-      closest = step;
-    }
+    step.addEventListener("click", () => setActiveStep(Number(step.dataset.step) || 1));
   });
 
-  storySteps.forEach((step) => step.classList.remove("is-active"));
-  closest.classList.add("is-active");
-  updateStoryDisplay();
-};
+  /* ---------------------------------------------------------------------
+     Count-up stats
+     --------------------------------------------------------------------- */
+  const countUp = (el) => {
+    const target = Number(el.dataset.count || 0);
+    const suffix = el.dataset.suffix || "";
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
 
-const updateEffects = () => {
-  const scrollTop = window.scrollY;
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? (scrollTop / scrollable) * 100 : 0;
+  const countObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          countUp(entry.target);
+          countObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  $$(".stat-number[data-count]").forEach((n) => countObserver.observe(n));
 
-  progressBar.style.width = `${progress}%`;
+  /* ---------------------------------------------------------------------
+     Scroll-driven UI (progress bar, header state, story sync, orb parallax)
+     ---------------------------------------------------------------------
+     Single rAF loop. No janky scroll-event thrash. */
+  const progressBar = $(".scroll-progress");
+  const orbA        = $(".orb-a");
+  const orbB        = $(".orb-b");
+  const storySection = $(".story");
 
-  // Subtle "Apple-style" depth movement on hero elements.
-  if (hero) {
-    const translateValue = Math.min(scrollTop * 0.18, 100);
-    hero.style.transform = `translateY(${translateValue}px)`;
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y     = window.scrollY;
+      const max   = document.documentElement.scrollHeight - window.innerHeight;
+      const pct   = max > 0 ? (y / max) * 100 : 0;
+
+      if (progressBar) progressBar.style.width = pct + "%";
+
+      if (header) header.classList.toggle("is-scrolled", y > 24);
+
+      if (orbA) orbA.style.transform = `translate3d(0, ${y * 0.12}px, 0)`;
+      if (orbB) orbB.style.transform = `translate3d(0, ${y * -0.08}px, 0)`;
+
+      // Sync story stage with scroll position through the story section
+      if (storySection && storySteps.length) {
+        const rect = storySection.getBoundingClientRect();
+        const total = rect.height - window.innerHeight * 0.6;
+        if (total > 0 && rect.top <= window.innerHeight * 0.4 && rect.bottom >= 0) {
+          const passed = Math.min(Math.max(-rect.top + window.innerHeight * 0.4, 0), total);
+          const ratio  = passed / total;
+          const idx    = Math.min(
+            storySteps.length,
+            Math.max(1, Math.floor(ratio * storySteps.length) + 1)
+          );
+          if (idx !== getActiveStep()) setActiveStep(idx);
+        }
+      }
+
+      ticking = false;
+    });
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+
+  /* ---------------------------------------------------------------------
+     Lang toggle + init
+     --------------------------------------------------------------------- */
+  const langBtn = $(".lang-toggle");
+  if (langBtn) {
+    langBtn.addEventListener("click", () => {
+      const current = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "en";
+      applyLanguage(current === "en" ? "he" : "en");
+    });
   }
 
-  updateActiveStoryStep();
-};
-
-window.addEventListener("scroll", updateEffects, { passive: true });
-if (langToggle) {
-  langToggle.addEventListener("click", () => {
-    const current = localStorage.getItem("siteLang") || "en";
-    applyLanguage(current === "en" ? "he" : "en");
-  });
-}
-
-applyLanguage(localStorage.getItem("siteLang") || "en");
-updateEffects();
+  const initialLang = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "en";
+  applyLanguage(initialLang);
+  onScroll();
+})();

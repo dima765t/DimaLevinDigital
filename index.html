@@ -3,174 +3,276 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PurpleFlow Studio | Home</title>
+    <meta name="theme-color" content="#0b0b10" />
+    <title>PurpleFlow Studio — Websites that move business forward</title>
     <meta
       name="description"
-      content="PurpleFlow Studio creates, manages, and develops high-performing websites for small businesses."
+      content="PurpleFlow Studio designs, builds, and evolves websites for small businesses that want to look premium and perform reliably."
     />
+
+    <meta property="og:title" content="PurpleFlow Studio" />
+    <meta property="og:description" content="Editorial, fast, conversion-focused websites for growing small businesses." />
+    <meta property="og:type" content="website" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-    <header class="site-header glass">
-      <a class="brand" href="./index.html">PurpleFlow Studio</a>
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Open menu"
-        aria-expanded="false"
-        aria-controls="primary-nav"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="primary-nav" class="site-nav">
-        <ul class="nav-list">
-          <li>
-            <a class="nav-link active" href="./index.html" data-i18n="nav_home">Home</a>
-          </li>
-          <li><a class="nav-link" href="./about.html" data-i18n="nav_about">About</a></li>
-          <li>
-            <a class="nav-link" href="./portfolio.html" data-i18n="nav_portfolio">Portfolio</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
-        <a
-          class="btn btn-whatsapp"
-          href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
-          target="_blank"
-          rel="noopener noreferrer"
-          data-i18n="contact_cta"
-          >Contact Us</a
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./index.html">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-name">PurpleFlow<span class="brand-dot">.</span></span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="primary-nav"
         >
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="site-nav">
+          <ul class="nav-list">
+            <li><a class="nav-link is-active" href="./index.html" data-i18n="nav_home">Home</a></li>
+            <li><a class="nav-link" href="./about.html" data-i18n="nav_about">About</a></li>
+            <li><a class="nav-link" href="./portfolio.html" data-i18n="nav_portfolio">Work</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="lang-toggle" type="button" aria-label="Toggle language">עב</button>
+          <a
+            class="btn btn-contact"
+            href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="contact_cta">Start a project</span>
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero section">
-        <div class="orb orb-one" aria-hidden="true"></div>
-        <div class="orb orb-two" aria-hidden="true"></div>
-        <div class="hero-content">
-          <p class="eyebrow reveal" data-i18n="hero_eyebrow">Websites that move business forward</p>
-          <h1 class="reveal">
-            <span data-i18n="hero_title">Outstanding web experiences for growing small businesses.</span>
-          </h1>
-          <p class="hero-description reveal" data-i18n="hero_desc">
-            We create, manage, and evolve modern websites that are visually bold,
-            fast, and conversion-focused.
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-ambient" aria-hidden="true">
+          <div class="orb orb-a"></div>
+          <div class="orb orb-b"></div>
+        </div>
+
+        <div class="hero-inner">
+          <p class="eyebrow reveal" data-i18n="hero_eyebrow">
+            <span class="eyebrow-dot"></span>
+            <span data-i18n-text>Independent web studio — Tel Aviv</span>
           </p>
+
+          <h1 class="hero-title">
+            <span class="line reveal-line"><span data-i18n="hero_title_1">Websites that</span></span>
+            <span class="line reveal-line"><em data-i18n="hero_title_2">quietly</em> <span data-i18n="hero_title_3">do</span></span>
+            <span class="line reveal-line"><span data-i18n="hero_title_4">the heavy lifting.</span></span>
+          </h1>
+
+          <p class="hero-lede reveal" data-i18n="hero_desc">
+            We design, build and maintain editorial websites for small businesses —
+            considered, fast, and measurably better for revenue.
+          </p>
+
           <div class="hero-actions reveal">
-            <a class="btn btn-primary" href="./portfolio.html" data-i18n="hero_btn_1">See Portfolio</a>
-            <a class="btn btn-secondary" href="./about.html" data-i18n="hero_btn_2">How We Work</a>
+            <a class="btn btn-primary" href="./portfolio.html">
+              <span data-i18n="hero_btn_1">See the work</span>
+            </a>
+            <a class="btn btn-ghost" href="./about.html">
+              <span data-i18n="hero_btn_2">How we work</span>
+              <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-marquee" aria-hidden="true">
+          <div class="marquee-track">
+            <span>Brand identity</span><span class="sep">✦</span>
+            <span>Website design</span><span class="sep">✦</span>
+            <span>Development</span><span class="sep">✦</span>
+            <span>Ongoing care</span><span class="sep">✦</span>
+            <span>SEO &amp; Analytics</span><span class="sep">✦</span>
+            <span>Brand identity</span><span class="sep">✦</span>
+            <span>Website design</span><span class="sep">✦</span>
+            <span>Development</span><span class="sep">✦</span>
+            <span>Ongoing care</span><span class="sep">✦</span>
+            <span>SEO &amp; Analytics</span><span class="sep">✦</span>
           </div>
         </div>
       </section>
 
-      <section class="section section-dark">
-        <div class="content-wrap">
-          <h2 class="section-title reveal" data-i18n="deliver_title">What we deliver</h2>
-          <div class="feature-grid">
-            <article class="feature-card reveal">
-              <h3 data-i18n="feature_1_title">Creation</h3>
-              <p data-i18n="feature_1_desc">
-                From strategy to launch, we craft digital storefronts tailored
-                to your goals and your audience.
-              </p>
-            </article>
-            <article class="feature-card reveal">
-              <h3 data-i18n="feature_2_title">Management</h3>
-              <p data-i18n="feature_2_desc">
-                We keep your site healthy, updated, and secure so you can focus
-                on your business operations.
-              </p>
-            </article>
-            <article class="feature-card reveal">
-              <h3 data-i18n="feature_3_title">Development</h3>
-              <p data-i18n="feature_3_desc">
-                Need growth? We continuously improve performance, UX, and SEO to
-                support measurable outcomes.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+      <!-- WHAT WE DELIVER -->
+      <section class="deliver">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-kicker reveal" data-i18n="deliver_kicker">What we deliver</p>
+            <h2 class="section-title reveal" data-i18n="deliver_title">
+              Three services, tuned to the life cycle of a small business website.
+            </h2>
+          </header>
 
-      <section class="section story-section">
-        <div class="story-wrap">
-          <div class="story-display reveal">
-            <div class="device-frame">
-              <div class="device-screen">
-                <p class="screen-step-number">01</p>
-                <h3 class="screen-step-title" data-i18n="story_step_1_title">Discover & plan</h3>
-                <p class="screen-step-desc" data-i18n="story_step_1_desc">
-                  We map business goals and customer intent before design begins.
+          <ol class="feature-list">
+            <li class="feature reveal">
+              <div class="feature-num">01</div>
+              <div class="feature-body">
+                <h3 data-i18n="feature_1_title">Creation</h3>
+                <p data-i18n="feature_1_desc">
+                  From positioning to launch — a digital storefront built around
+                  the exact customer you want to reach.
                 </p>
+              </div>
+            </li>
+            <li class="feature reveal">
+              <div class="feature-num">02</div>
+              <div class="feature-body">
+                <h3 data-i18n="feature_2_title">Management</h3>
+                <p data-i18n="feature_2_desc">
+                  Hosting, updates, backups, monitoring. The quiet infrastructure
+                  that lets you stop thinking about your website.
+                </p>
+              </div>
+            </li>
+            <li class="feature reveal">
+              <div class="feature-num">03</div>
+              <div class="feature-body">
+                <h3 data-i18n="feature_3_title">Development</h3>
+                <p data-i18n="feature_3_desc">
+                  Continuous improvements to speed, UX and SEO — always
+                  grounded in measurable outcomes.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- STORY / PROCESS (pinned) -->
+      <section class="story" id="process">
+        <div class="story-grid">
+          <div class="story-sticky">
+            <div class="story-viewport">
+              <p class="section-kicker" data-i18n="story_kicker">Process</p>
+              <div class="story-stage">
+                <div class="story-card" data-slide="1">
+                  <span class="story-num">01</span>
+                  <h3 data-i18n="story_step_1_title">Discover &amp; plan</h3>
+                  <p data-i18n="story_step_1_desc">
+                    We map business goals and customer intent before a single
+                    pixel is drawn.
+                  </p>
+                </div>
+                <div class="story-card" data-slide="2">
+                  <span class="story-num">02</span>
+                  <h3 data-i18n="story_step_2_title">Design with clarity</h3>
+                  <p data-i18n="story_step_2_desc">
+                    Your brand becomes a calm, confident visual system — with a
+                    hierarchy the user feels before they read.
+                  </p>
+                </div>
+                <div class="story-card" data-slide="3">
+                  <span class="story-num">03</span>
+                  <h3 data-i18n="story_step_3_title">Build &amp; ship</h3>
+                  <p data-i18n="story_step_3_desc">
+                    Hand-written, accessible code. Core Web Vitals in the green
+                    from day one.
+                  </p>
+                </div>
+                <div class="story-card" data-slide="4">
+                  <span class="story-num">04</span>
+                  <h3 data-i18n="story_step_4_title">Measure &amp; evolve</h3>
+                  <p data-i18n="story_step_4_desc">
+                    Launch is the start. Every month we review behavior data and
+                    make the site a little sharper.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="story-steps">
-            <article class="story-step reveal is-active" data-step="1">
-              <h3 data-i18n="story_step_1_title">Discover & plan</h3>
-              <p data-i18n="story_step_1_desc">
-                We map business goals and customer intent before design begins.
-              </p>
-            </article>
-            <article class="story-step reveal" data-step="2">
-              <h3 data-i18n="story_step_2_title">Design with clarity</h3>
-              <p data-i18n="story_step_2_desc">
-                Your brand is translated into clean, premium visuals with a clear hierarchy.
-              </p>
-            </article>
-            <article class="story-step reveal" data-step="3">
-              <h3 data-i18n="story_step_3_title">Launch & optimize</h3>
-              <p data-i18n="story_step_3_desc">
-                We ship fast, measure behavior, and improve continuously for growth.
-              </p>
-            </article>
+
+          <ol class="story-steps">
+            <li class="story-step reveal is-active" data-step="1">
+              <span class="step-idx">01</span>
+              <h4 data-i18n="story_step_1_title">Discover &amp; plan</h4>
+            </li>
+            <li class="story-step reveal" data-step="2">
+              <span class="step-idx">02</span>
+              <h4 data-i18n="story_step_2_title">Design with clarity</h4>
+            </li>
+            <li class="story-step reveal" data-step="3">
+              <span class="step-idx">03</span>
+              <h4 data-i18n="story_step_3_title">Build &amp; ship</h4>
+            </li>
+            <li class="story-step reveal" data-step="4">
+              <span class="step-idx">04</span>
+              <h4 data-i18n="story_step_4_title">Measure &amp; evolve</h4>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="stats">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat reveal">
+              <div class="stat-number" data-count="90" data-suffix="%+">0</div>
+              <p class="stat-label" data-i18n="stat_1">of new clients arrive through referrals.</p>
+            </div>
+            <div class="stat reveal">
+              <div class="stat-number stat-text">24/7</div>
+              <p class="stat-label" data-i18n="stat_2">monitoring and uptime coverage.</p>
+            </div>
+            <div class="stat reveal">
+              <div class="stat-number stat-text">1:1</div>
+              <p class="stat-label" data-i18n="stat_3">senior-led collaboration, no account layers.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="content-wrap split-layout">
-          <div class="split-copy reveal">
-            <h2 data-i18n="motion_title">Tech-style visuals with smooth motion</h2>
-            <p data-i18n="motion_desc">
-              Inspired by modern product storytelling pages, this site uses
-              scroll-triggered animations, layered depth, and a clean visual
-              hierarchy.
-            </p>
-          </div>
-          <div class="stats-card reveal">
-            <div class="stat">
-              <span class="stat-number">90%+</span>
-              <span class="stat-label" data-i18n="stat_1">Clients from referrals</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">24/7</span>
-              <span class="stat-label" data-i18n="stat_2">Monitoring options</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">1:1</span>
-              <span class="stat-label" data-i18n="stat_3">Personal collaboration</span>
-            </div>
-          </div>
+      <!-- CLOSING CTA -->
+      <section class="cta">
+        <div class="container cta-inner">
+          <h2 class="cta-title reveal">
+            <span data-i18n="cta_line_1">Let's build</span>
+            <em data-i18n="cta_line_2">something quietly excellent.</em>
+          </h2>
+          <a
+            class="btn btn-primary btn-large"
+            href="https://wa.me/?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA%20%D7%91%D7%A0%D7%95%D7%92%D7%A2%20%D7%9C%D7%A9%D7%99%D7%A8%D7%95%D7%AA%D7%9A."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="cta_button"
+          >
+            Start a conversation
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p data-i18n="footer_copy">© 2026 PurpleFlow Studio. Crafted for ambitious small businesses.</p>
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>PurpleFlow Studio</span>
+        </div>
+        <p data-i18n="footer_copy">© 2026 — Crafted for ambitious small businesses.</p>
+      </div>
     </footer>
 
     <script src="./index.js"></script>
