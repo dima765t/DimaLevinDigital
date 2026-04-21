@@ -1,5 +1,5 @@
 /* =========================================================================
-   PurpleFlow Studio — About
+   DimaLevin Digital — About
    ========================================================================= */
 
 (() => {
@@ -20,7 +20,7 @@
       hero_title_2: "obsessed",
       hero_title_3: "with",
       hero_title_4: "the quiet details.",
-      hero_desc: "PurpleFlow exists for one reason — to give small businesses websites that look premium, perform reliably and convert visitors into customers.",
+      hero_desc: "DimaLevin Digital exists for one reason — to give small businesses websites that look premium, perform reliably and convert visitors into customers.",
 
       manifesto_kicker: "Manifesto",
       manifesto_1: "We believe a website is a hard-working employee, not a billboard. It should qualify leads, tell the story, reassure the skeptic and get out of the way.",
@@ -68,7 +68,7 @@
       hero_title_2: "אובססיבי",
       hero_title_3: "לגבי",
       hero_title_4: "הפרטים השקטים.",
-      hero_desc: "PurpleFlow קיים מסיבה אחת — לתת לעסקים קטנים אתרים שנראים פרימיום, פועלים בצורה אמינה והופכים מבקרים ללקוחות.",
+      hero_desc: "DimaLevin Digital קיים מסיבה אחת — לתת לעסקים קטנים אתרים שנראים פרימיום, פועלים בצורה אמינה והופכים מבקרים ללקוחות.",
 
       manifesto_kicker: "מניפסט",
       manifesto_1: "אנחנו מאמינים שאתר הוא עובד חרוץ, לא שלט חוצות. הוא צריך לסנן לידים, לספר את הסיפור, להרגיע את הספקן, ולהתפנות מהדרך.",

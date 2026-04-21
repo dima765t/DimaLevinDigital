@@ -1,5 +1,5 @@
 /* =========================================================================
-   PurpleFlow Studio — About
+   DimaLevin Digital — About
    Shared design system + About-specific editorial layout.
    ========================================================================= */
 
@@ -9,8 +9,8 @@
   --ink:         #f0ead9;
   --ink-dim:     #a8a4b0;
   --ink-faint:   #6d6a75;
-  --accent:      #b89bf9;
-  --accent-deep: #7c48ff;
+  --accent:      #6cb2d4;
+  --accent-deep: #1e5f8f;
   --line:        rgba(240, 234, 217, 0.08);
   --line-strong: rgba(240, 234, 217, 0.18);
 
@@ -94,9 +94,8 @@ img, svg { display: block; max-width: 100%; }
 
 .brand { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.98rem; letter-spacing: -0.01em; }
 .brand-mark {
-  width: 22px; height: 22px; border-radius: 50%; flex: none;
-  background: radial-gradient(circle at 30% 30%, #e7d7ff 0%, var(--accent) 40%, var(--accent-deep) 100%);
-  box-shadow: 0 0 18px rgba(184, 155, 249, 0.5);
+  width: 36px; height: auto; flex: none;
+  color: var(--accent);
 }
 .brand-name { font-family: var(--font-body); }
 .brand-dot  { color: var(--accent); }
@@ -183,7 +182,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
   inset-inline-end: -160px;
   width: 520px; height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(124, 72, 255, 0.35), transparent 65%);
+  background: radial-gradient(circle, rgba(30, 95, 143, 0.35), transparent 65%);
   filter: blur(100px);
   z-index: -1;
   pointer-events: none;
@@ -314,7 +313,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
 .pillar:hover {
   border-color: var(--line-strong);
   transform: translateY(-3px);
-  background: linear-gradient(180deg, rgba(184, 155, 249, 0.06), transparent);
+  background: linear-gradient(180deg, rgba(108, 178, 212, 0.06), transparent);
 }
 
 .pillar-num {
@@ -385,7 +384,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
   border-radius: 50%;
   background: var(--bg);
   border: 2px solid var(--accent);
-  box-shadow: 0 0 0 4px var(--bg), 0 0 20px rgba(184, 155, 249, 0.5);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 20px rgba(108, 178, 212, 0.5);
   z-index: 1;
 }
 
@@ -426,7 +425,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(124, 72, 255, 0.2), transparent 60%);
+  background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(30, 95, 143, 0.2), transparent 60%);
   z-index: -1;
 }
 
@@ -469,7 +468,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
   display: inline-flex; align-items: center; gap: 0.55rem;
   color: var(--ink-dim); font-weight: 500;
 }
-.footer-brand .brand-mark { width: 16px; height: 16px; }
+.footer-brand .brand-mark { width: 28px; height: auto; }
 .footer-inner p { margin: 0; }
 
 /* REVEAL */
