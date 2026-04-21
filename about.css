@@ -93,12 +93,12 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .brand { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 0.98rem; letter-spacing: -0.01em; }
-.brand-mark {
-  width: 36px; height: auto; flex: none;
-  color: var(--accent);
+.brand-logo {
+  height: 36px; width: auto; flex: none; display: block;
+  filter: invert(1) hue-rotate(180deg);
+  border-radius: 4px;
 }
-.brand-name { font-family: var(--font-body); }
-.brand-dot  { color: var(--accent); }
+.brand-logo-sm { height: 28px; }
 
 .site-nav { margin-inline: auto; }
 .nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.35rem; }
@@ -468,7 +468,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
   display: inline-flex; align-items: center; gap: 0.55rem;
   color: var(--ink-dim); font-weight: 500;
 }
-.footer-brand .brand-mark { width: 28px; height: auto; }
+.footer-brand .brand-logo { height: 28px; }
 .footer-inner p { margin: 0; }
 
 /* REVEAL */
@@ -512,6 +512,7 @@ html[dir="rtl"] .btn-contact:hover svg { transform: scaleX(-1) translateX(3px); 
   .about-title { font-size: clamp(2.4rem, 12vw, 3.6rem); }
   .btn-contact span { display: none; }
   .btn-contact { padding: 0.62rem 0.8rem; }
+  .brand-logo { height: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

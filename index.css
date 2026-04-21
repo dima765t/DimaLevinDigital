@@ -130,15 +130,18 @@ img, svg { display: block; max-width: 100%; }
   letter-spacing: -0.01em;
 }
 
-.brand-mark {
-  width: 36px;
-  height: auto;
+.brand-logo {
+  height: 36px;
+  width: auto;
   flex: none;
-  color: var(--accent);
+  display: block;
+  filter: invert(1) hue-rotate(180deg);
+  border-radius: 4px;
 }
 
-.brand-name { font-family: var(--font-body); }
-.brand-dot  { color: var(--accent); }
+.brand-logo-sm {
+  height: 28px;
+}
 
 .site-nav { margin-inline: auto; }
 
@@ -736,7 +739,7 @@ html[dir="rtl"] .marquee-track { animation-direction: reverse; }
   color: var(--ink-dim);
   font-weight: 500;
 }
-.footer-brand .brand-mark { width: 28px; height: auto; }
+.footer-brand .brand-logo { height: 28px; }
 
 .footer-inner p { margin: 0; }
 
@@ -810,6 +813,7 @@ html[dir="rtl"] .marquee-track { animation-direction: reverse; }
   .hero-marquee { position: relative; margin-top: 3rem; bottom: auto; }
   .btn-contact span { display: none; }
   .btn-contact { padding: 0.62rem 0.8rem; }
+  .brand-logo { height: 28px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
