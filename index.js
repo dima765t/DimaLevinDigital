@@ -13,10 +13,14 @@
      --------------------------------------------------------------------- */
   const translations = {
     en: {
+      page_title: "DimaLevin Digital — Websites that move business forward",
+      meta_description: "An independent web studio in Tel Aviv — we design, build and maintain editorial websites for small businesses that want to look premium and perform reliably.",
       nav_home: "Home",
       nav_about: "About",
       nav_portfolio: "Work",
       contact_cta: "Start a project",
+      skip_link: "Skip to main content",
+      footer_accessibility: "Accessibility Statement",
 
       hero_eyebrow_text: "Independent web studio — Tel Aviv",
       hero_title_1: "Websites that",
@@ -98,6 +102,10 @@
       cta_line_2: "משהו מצוין בשקט.",
       cta_button: "לפתוח בשיחה",
 
+      page_title: "דימה לוין דיגיטל | אתרים שמניעים עסקים קדימה",
+      meta_description: "סטודיו עצמאי לעיצוב ובניית אתרים לעסקים קטנים בתל אביב. מעצבים, בונים ומתחזקים אתרים מוקפדים, מהירים ומניבי הכנסות.",
+      skip_link: "דלג לתוכן הראשי",
+      footer_accessibility: "הצהרת נגישות",
       footer_copy: "© 2026 — נבנה עבור עסקים קטנים עם שאיפות גדולות."
     }
   };
@@ -110,6 +118,11 @@
     try { localStorage.setItem("siteLang", selected); } catch (_) {}
     document.documentElement.lang = selected;
     document.documentElement.dir = selected === "he" ? "rtl" : "ltr";
+
+    const t = translations[selected];
+    if (t.page_title) document.title = t.page_title;
+    const descEl = document.querySelector('meta[name="description"]');
+    if (descEl && t.meta_description) descEl.setAttribute("content", t.meta_description);
 
     const toggle = $(".lang-toggle");
     if (toggle) toggle.textContent = selected === "he" ? "EN" : "עב";
@@ -284,7 +297,7 @@
     });
   }
 
-  const initialLang = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "en";
+  const initialLang = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "he";
   applyLanguage(initialLang);
   onScroll();
 })();

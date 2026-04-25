@@ -517,6 +517,28 @@ html[dir="rtl"] .project-link:hover .project-cta svg { transform: scaleX(-1) tra
   color: var(--accent); display: block;
 }
 
+/* SKIP LINK */
+.skip-link {
+  position: absolute;
+  top: -60px;
+  inset-inline-start: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1.2rem;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: top 0.2s var(--ease);
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* FOOTER */
 .site-footer {
   padding: 2.5rem 0 3rem;
@@ -533,6 +555,16 @@ html[dir="rtl"] .project-link:hover .project-cta svg { transform: scaleX(-1) tra
 }
 .footer-brand .brand-logo { height: 28px; }
 .footer-inner p { margin: 0; }
+
+.footer-access-link {
+  color: var(--ink-faint);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: color 0.25s var(--ease);
+}
+.footer-access-link:hover,
+.footer-access-link:focus { color: var(--accent); text-decoration: underline; }
+.footer-access-link[aria-current="page"] { color: var(--accent); }
 
 /* REVEAL */
 .reveal {

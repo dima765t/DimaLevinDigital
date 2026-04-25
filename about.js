@@ -10,10 +10,14 @@
 
   const translations = {
     en: {
+      page_title: "About — DimaLevin Digital",
+      meta_description: "DimaLevin Digital — a small studio obsessed with quiet details, building websites that look premium, perform reliably and convert visitors into customers.",
       nav_home: "Home",
       nav_about: "About",
       nav_portfolio: "Work",
       contact_cta: "Start a project",
+      skip_link: "Skip to main content",
+      footer_accessibility: "Accessibility Statement",
 
       hero_eyebrow: "About the studio",
       hero_title_1: "A small studio",
@@ -103,6 +107,10 @@
       cta_line_2: "להתאים לפרויקט שלכם?",
       cta_button: "לשלוח הודעה ב-WhatsApp",
 
+      page_title: "אודות | דימה לוין דיגיטל",
+      meta_description: "דימה לוין דיגיטל — סטודיו קטן שמעצב, בונה ומתחזק אתרים לעסקים קטנים שמקפידים על נוכחות דיגיטלית חזקה.",
+      skip_link: "דלג לתוכן הראשי",
+      footer_accessibility: "הצהרת נגישות",
       footer_copy: "© 2026 — נבנה עבור עסקים קטנים עם שאיפות גדולות."
     }
   };
@@ -113,6 +121,11 @@
     try { localStorage.setItem("siteLang", selected); } catch (_) {}
     document.documentElement.lang = selected;
     document.documentElement.dir = selected === "he" ? "rtl" : "ltr";
+
+    const t = translations[selected];
+    if (t.page_title) document.title = t.page_title;
+    const descEl = document.querySelector('meta[name="description"]');
+    if (descEl && t.meta_description) descEl.setAttribute("content", t.meta_description);
 
     const toggle = $(".lang-toggle");
     if (toggle) toggle.textContent = selected === "he" ? "EN" : "עב";
@@ -186,7 +199,7 @@
       applyLanguage(current === "en" ? "he" : "en");
     });
   }
-  const initialLang = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "en";
+  const initialLang = (() => { try { return localStorage.getItem("siteLang"); } catch (_) { return null; } })() || "he";
   applyLanguage(initialLang);
   onScroll();
 })();
